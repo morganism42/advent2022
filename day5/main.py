@@ -59,9 +59,8 @@ commands = [[4, 9, 6], [7, 2, 5], [3, 5, 2], [2, 2, 1], [2, 8, 4], [1, 6, 9], [1
             [2, 3, 1], [7, 2, 3], [6, 5, 1], [1, 4, 2], [8, 1, 6], [3, 2, 9]]
 for i in commands:
     for j in reversed(range(i[0])):
-        stacks[i[2] - 1].append(stacks[i[1] - 1][-j-1])
-    for j in range(i[0]):
-        del stacks[i[1] - 1][-1]
+        stacks[i[2] - 1].append(stacks[i[1] - 1][-j - 1])
+    del stacks[i[1] - 1][-i[0]:]
 output = ''
 for i in stacks:
     try:
